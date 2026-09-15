@@ -9,7 +9,7 @@ the detailed method for each test; amendments live in `DECISIONS.md`.
 
 **Step 1 — Test 0: Napkin feasibility** (Phase 0) · `IN PROGRESS` — 1.1 ✅ done 2026-09-15
 Folder: `experiments/T00-feasibility/` · Target: ~1 week
-Target: **Kimi K3** @ `f831ab6` · Proxy for all on-Mac experiments: **Kimi Linear 48B-A3B** @ `e1df551` (D-004)
+Target: **Kimi K3** @ `f831ab6` · Testing strategy: **proxy portfolio + layer-streamed real K3** (D-005, `experiments/P00-proxy-selection/`)
 Next action: **1.2 — extract the architecture table for K3 and Kimi Linear, with the parameter-count sanity check.**
 Heads-up: K3 has 93 layers → naive one-round-trip-per-layer decode is ~0.07 tok/s at 150 ms (below the kill line). Topology choice in 1.3 is decisive.
 
@@ -48,7 +48,7 @@ Heads-up: K3 has 93 layers → naive one-round-trip-per-layer decode is ~0.07 to
 | T2 | Next-layer predictability | Probe recall of layer L+1 experts from layer L state | recall ≈ chance | NOT STARTED |
 | T3 | Boundary precision | fp8 / int8 / int4 activations on the wire | — (sets bandwidth) | NOT STARTED |
 
-Proxy + hardware chosen (D-004): Kimi Linear 48B-A3B on M4 Max 128 GB; peers simulated as logical partitions of one loaded model. Open: which precision for traces (P-6).
+Proxies per D-005: dev on Ling-3.0-tiny → primary Ling-3.0-flash, LatentMoE check on Nemotron-3-Super, family check on Kimi Linear, transfer check vs streamed K3 layers. Peers simulated as logical partitions of one loaded model. Open: P-6, P-7, P-8.
 
 ### Phase 2 — Simulator (6–8 weeks)
 | ID | Test | Question | Kill gate | Status |
@@ -92,6 +92,8 @@ Proxy + hardware chosen (D-004): Kimi Linear 48B-A3B on M4 Max 128 GB; peers sim
 | L1 | Prior-art sweep (`references/reading-list.md`) | T1/T2/T5 may be partly answered; protects novelty claim | NOT STARTED |
 | L2 | Consumer RTT measurements, target geography | T4 input; needs calendar time | NOT STARTED |
 | L3 | K3 license + legal questions | Can change target model; legal advice before launch | IN PROGRESS — license read 2026-09-15 (no blocker for non-commercial); legal review still due before launch |
+| P0 | Proxy selection (how to test without serving K3) | Every Phase 1–3 result depends on it | DONE — recommendation 2026-09-15, awaiting P-8 |
+| K3S | K3 layer-streaming spike (load + run real K3 layers one shard at a time) | Only local source of real K3 routing/activations | NOT STARTED — awaiting P-7 |
 | L4 | Same-tokenizer draft model availability | Spec decoding (T7) depends on it | IN PROGRESS — same tokenizer: Kimi Linear 48B-A3B, Moonlight 16B-A3B (no 1–3B dense); chat-token ID alignment unchecked |
 
 ---
@@ -101,3 +103,4 @@ Proxy + hardware chosen (D-004): Kimi Linear 48B-A3B on M4 Max 128 GB; peers sim
 2. **Step 2 — L1 prior-art sweep** (3–5 days, can overlap end of Step 1)
 3. **Step 3 — Phase 1 setup**: pick proxy MoE + hardware, build routing-trace logger, assemble prompt corpus
 4. Start **L2 RTT measurements** in the background as soon as Step 1 closes
+5. **K3S spike** (after P-7 approval): stream K3 layers 0–3, verify MLX correctness, measure per-layer compute time (also feeds T0)

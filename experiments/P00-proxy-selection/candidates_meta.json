@@ -1,0 +1,227 @@
+{
+  "moonshotai/Kimi-K3": {
+    "sha": "f831ab66814297da540d832a5235f8e904f29d06",
+    "lastModified": "2026-09-02T02:22:41.000Z",
+    "params_total": 2779931837184,
+    "params_by_dtype": {
+      "F32": 11122432,
+      "BF16": 57179884544,
+      "U8": 2722740830208
+    },
+    "license": "other",
+    "license_name": "kimi-k3",
+    "gated": false
+  },
+  "moonshotai/Kimi-Linear-48B-A3B-Instruct": {
+    "sha": "e1df551a447157d4658b573f9a695d57658590e9",
+    "lastModified": "2025-12-16T14:50:08.000Z",
+    "params_total": 49122681728,
+    "params_by_dtype": {
+      "BF16": 49122599168,
+      "F32": 82560
+    },
+    "license": "mit",
+    "license_name": null,
+    "gated": false
+  },
+  "moonshotai/Moonlight-16B-A3B-Instruct": {
+    "sha": "4e735b07a89f73647dfab71ab91b840f362ede5b",
+    "lastModified": "2026-01-30T04:52:43.000Z",
+    "params_total": 15960111936,
+    "params_by_dtype": {
+      "BF16": 15960111936
+    },
+    "license": "mit",
+    "license_name": null,
+    "gated": false
+  },
+  "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16": {
+    "sha": "2dc98e2afe4face0e4ce40972a915c45368bd34a",
+    "lastModified": "2026-08-25T15:48:50.000Z",
+    "params_total": 123611012096,
+    "params_by_dtype": {
+      "F32": 20992,
+      "BF16": 123611012096
+    },
+    "license": "other",
+    "license_name": "nvidia-nemotron-open-model-license",
+    "gated": false
+  },
+  "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16": {
+    "sha": "bf77c3174f68ad409e1c2aa60daeb46e32d1c606",
+    "lastModified": "2026-08-24T23:50:04.000Z",
+    "params_total": 31577937344,
+    "params_by_dtype": {
+      "F32": 5888,
+      "BF16": 31577934400
+    },
+    "license": "other",
+    "license_name": "nvidia-nemotron-open-model-license",
+    "gated": false
+  },
+  "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16": {
+    "sha": "a9904d24bcc1d289a1950fa9d2b978c47cf903b9",
+    "lastModified": "2026-08-24T23:46:27.000Z",
+    "params_total": 31577937344,
+    "params_by_dtype": {
+      "F32": 3072,
+      "BF16": 32913263168
+    },
+    "license": "other",
+    "license_name": "openmdw-1.1",
+    "gated": false
+  },
+  "Qwen/Qwen3.5-35B-A3B": {
+    "sha": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+    "lastModified": "2026-04-24T02:38:38.000Z",
+    "params_total": 35951822704,
+    "params_by_dtype": {
+      "BF16": 35951817904,
+      "F32": 4800
+    },
+    "license": "apache-2.0",
+    "license_name": null,
+    "gated": false
+  },
+  "Qwen/Qwen3.6-35B-A3B": {
+    "sha": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+    "lastModified": "2026-04-24T02:53:42.000Z",
+    "params_total": 35951822704,
+    "params_by_dtype": {
+      "BF16": 35951822704
+    },
+    "license": "apache-2.0",
+    "license_name": null,
+    "gated": false
+  },
+  "Qwen/Qwen3.5-122B-A10B": {
+    "sha": "dc4d348443bc740c68e2d77492492c11606384d5",
+    "lastModified": "2026-04-24T03:55:23.000Z",
+    "params_total": 125086497008,
+    "params_by_dtype": {
+      "BF16": 125086490096,
+      "F32": 6912
+    },
+    "license": "apache-2.0",
+    "license_name": null,
+    "gated": false
+  },
+  "Qwen/Qwen3-Next-80B-A3B-Instruct": {
+    "sha": "9c7f2fbe84465e40164a94cc16cd30b6999b0cc7",
+    "lastModified": "2025-09-17T06:57:40.000Z",
+    "params_total": 81324862720,
+    "params_by_dtype": {
+      "BF16": 81324862720
+    },
+    "license": "apache-2.0",
+    "license_name": null,
+    "gated": false
+  },
+  "Qwen/Qwen3.8-Flash-Next": {
+    "sha": "de4b8e4d43b917e7706784d8bb445c9af86a3540",
+    "lastModified": "2026-08-27T05:03:36.000Z",
+    "params_total": 179999981459,
+    "params_by_dtype": {
+      "BF16": 179999981424,
+      "I64": 35
+    },
+    "license": "other",
+    "license_name": "qwen-community-1.0",
+    "gated": false
+  },
+  "openai/gpt-oss-120b": {
+    "sha": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+    "lastModified": "2025-08-26T17:25:03.000Z",
+    "params_total": 116829156672,
+    "params_by_dtype": {
+      "BF16": 2167371072,
+      "U8": 114661785600
+    },
+    "license": "apache-2.0",
+    "license_name": null,
+    "gated": false
+  },
+  "openai/gpt-oss-20b": {
+    "sha": "6cee5e81ee83917806bbde320786a8fb61efebee",
+    "lastModified": "2025-08-26T17:25:47.000Z",
+    "params_total": 20914757184,
+    "params_by_dtype": {
+      "BF16": 1804459584,
+      "U8": 19110297600
+    },
+    "license": "apache-2.0",
+    "license_name": null,
+    "gated": false
+  },
+  "zai-org/GLM-4.7-Flash": {
+    "sha": "7dd20894a642a0aa287e9827cb1a1f7f91386b67",
+    "lastModified": "2026-01-29T08:06:19.000Z",
+    "params_total": 31221488576,
+    "params_by_dtype": {
+      "BF16": 31221485568,
+      "F32": 3008
+    },
+    "license": "mit",
+    "license_name": null,
+    "gated": false
+  },
+  "zai-org/GLM-4.5-Air": {
+    "sha": "a24ceef6ce4f3536971efe9b778bdaa1bab18daa",
+    "lastModified": "2025-08-11T13:25:37.000Z",
+    "params_total": 110468824832,
+    "params_by_dtype": {
+      "BF16": 110468818944,
+      "F32": 5888
+    },
+    "license": "mit",
+    "license_name": null,
+    "gated": false
+  },
+  "inclusionAI/Ling-3.0-tiny": {
+    "sha": "e3a47d5b986e7141b6efd62597d598ebb392060d",
+    "lastModified": "2026-09-04T02:43:12.000Z",
+    "params_total": 7893392800,
+    "params_by_dtype": {
+      "F32": 40096,
+      "BF16": 7893352704
+    },
+    "license": "mit",
+    "license_name": null,
+    "gated": false
+  },
+  "inclusionAI/Ling-3.0-flash": {
+    "sha": "e0dfe7cd0f6e3b572bbbc0a8a84947469e428cc3",
+    "lastModified": "2026-09-04T05:41:09.000Z",
+    "params_total": 127486405600,
+    "params_by_dtype": {
+      "F32": 165472,
+      "BF16": 127486240128
+    },
+    "license": "mit",
+    "license_name": null,
+    "gated": false
+  },
+  "inclusionAI/Ling-mini-2.0": {
+    "sha": "920c3fd9916e3d5e543fc4f609e827cad8a32983",
+    "lastModified": "2026-04-13T11:40:51.000Z",
+    "params_total": 16255643392,
+    "params_by_dtype": {
+      "BF16": 16255638528,
+      "F32": 4864
+    },
+    "license": "mit",
+    "license_name": null,
+    "gated": false
+  },
+  "wdlctc/open-attnres-0.6b-block": {
+    "sha": "cbb7b73d9a90277eb9ceea8576cb832454b32156",
+    "lastModified": "2026-03-27T18:13:28.000Z",
+    "params_total": 508080640,
+    "params_by_dtype": {
+      "BF16": 508080640
+    },
+    "license": null,
+    "license_name": null,
+    "gated": false
+  }
+}
