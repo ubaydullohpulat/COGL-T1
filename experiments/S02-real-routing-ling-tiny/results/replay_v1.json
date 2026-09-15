@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "seed": 20260916,
+    "n_peers": 4,
+    "calibration_scale": 0.5400283636875631,
+    "measured_decode_tok_per_s": 162.95958375577828,
+    "remote_call_overhead_s": 0.002,
+    "decode_tokens": 6136
+  },
+  "rows": [
+    {
+      "topology": "A_chain",
+      "profile": "lan",
+      "frac": 1.0,
+      "tok_per_s": 59.62084719528384,
+      "mean_s": 0.016772656663609144,
+      "p95_s": 0.01696144841902457
+    },
+    {
+      "topology": "B_star",
+      "profile": "lan",
+      "frac": null,
+      "tok_per_s": 12.40307128294635,
+      "mean_s": 0.08062519171158468,
+      "p95_s": 0.08148246663207075
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "lan",
+      "frac": 0.25,
+      "cache": "global_freq",
+      "tok_per_s": 11.402005127373664,
+      "mean_s": 0.08770387215483912,
+      "p95_s": 0.0922447940293613
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "lan",
+      "frac": 0.5,
+      "cache": "global_freq",
+      "tok_per_s": 15.134060420830652,
+      "mean_s": 0.06607612049860666,
+      "p95_s": 0.09189565059910633
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "lan",
+      "frac": 0.75,
+      "cache": "global_freq",
+      "tok_per_s": 23.000363412928582,
+      "mean_s": 0.043477573899458326,
+      "p95_s": 0.08846711867037839
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "lan",
+      "frac": 0.9,
+      "cache": "global_freq",
+      "tok_per_s": 33.072235790314984,
+      "mean_s": 0.030236842962181716,
+      "p95_s": 0.06825220134940263
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "lan",
+      "frac": 0.5,
+      "cache": "domain_freq",
+      "tok_per_s": 18.388357059661576,
+      "mean_s": 0.05438223745359469,
+      "p95_s": 0.08789299133845117
+    },
+    {
+      "topology": "A_chain",
+      "profile": "metro",
+      "frac": 1.0,
+      "tok_per_s": 13.339733538412522,
+      "mean_s": 0.07496401611924579,
+      "p95_s": 0.10080337517075205
+    },
+    {
+      "topology": "B_star",
+      "profile": "metro",
+      "frac": null,
+      "tok_per_s": 1.267077950811515,
+      "mean_s": 0.7892174268832775,
+      "p95_s": 1.1742947754056843
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "metro",
+      "frac": 0.25,
+      "cache": "global_freq",
+      "tok_per_s": 1.307665074464905,
+      "mean_s": 0.7647218079975094,
+      "p95_s": 1.1660308386185285
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "metro",
+      "frac": 0.5,
+      "cache": "global_freq",
+      "tok_per_s": 1.8755436589686079,
+      "mean_s": 0.5331787373853597,
+      "p95_s": 1.0236702241063402
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "metro",
+      "frac": 0.75,
+      "cache": "global_freq",
+      "tok_per_s": 3.1471910038362996,
+      "mean_s": 0.3177436637245849,
+      "p95_s": 0.7858844781582943
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "metro",
+      "frac": 0.9,
+      "cache": "global_freq",
+      "tok_per_s": 5.218286406300879,
+      "mean_s": 0.19163378974226838,
+      "p95_s": 0.5325215486746028
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "metro",
+      "frac": 0.5,
+      "cache": "domain_freq",
+      "tok_per_s": 2.4534368038560688,
+      "mean_s": 0.40759150528283394,
+      "p95_s": 0.7955033872646075
+    },
+    {
+      "topology": "A_chain",
+      "profile": "national",
+      "frac": 1.0,
+      "tok_per_s": 5.148669704933156,
+      "mean_s": 0.19422492746851833,
+      "p95_s": 0.3543552467452601
+    },
+    {
+      "topology": "B_star",
+      "profile": "national",
+      "frac": null,
+      "tok_per_s": 0.44078355383054746,
+      "mean_s": 2.2686871851494597,
+      "p95_s": 3.0054090093058208
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "national",
+      "frac": 0.25,
+      "cache": "global_freq",
+      "tok_per_s": 0.46090641439390134,
+      "mean_s": 2.1696378457110748,
+      "p95_s": 2.960034282264057
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "national",
+      "frac": 0.5,
+      "cache": "global_freq",
+      "tok_per_s": 0.6738599533376661,
+      "mean_s": 1.4839878747014776,
+      "p95_s": 2.6015293579038588
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "national",
+      "frac": 0.75,
+      "cache": "global_freq",
+      "tok_per_s": 1.150899324136824,
+      "mean_s": 0.8688857305133978,
+      "p95_s": 2.1371814908561015
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "national",
+      "frac": 0.9,
+      "cache": "global_freq",
+      "tok_per_s": 1.9310313339999237,
+      "mean_s": 0.5178579872800964,
+      "p95_s": 1.4583498155747345
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "national",
+      "frac": 0.5,
+      "cache": "domain_freq",
+      "tok_per_s": 0.8948782893503908,
+      "mean_s": 1.1174704000539772,
+      "p95_s": 2.126548166612161
+    },
+    {
+      "topology": "A_chain",
+      "profile": "researcher",
+      "frac": 1.0,
+      "tok_per_s": 2.482658688485928,
+      "mean_s": 0.4027939904255865,
+      "p95_s": 0.579958177934206
+    },
+    {
+      "topology": "B_star",
+      "profile": "researcher",
+      "frac": null,
+      "tok_per_s": 0.21152541360324775,
+      "mean_s": 4.727564328869115,
+      "p95_s": 5.780441208721202
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "researcher",
+      "frac": 0.25,
+      "cache": "global_freq",
+      "tok_per_s": 0.2197205929307584,
+      "mean_s": 4.551234759843993,
+      "p95_s": 5.821316990160351
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "researcher",
+      "frac": 0.5,
+      "cache": "global_freq",
+      "tok_per_s": 0.3182715603714646,
+      "mean_s": 3.141970959745411,
+      "p95_s": 5.263612753708578
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "researcher",
+      "frac": 0.75,
+      "cache": "global_freq",
+      "tok_per_s": 0.5450304757432394,
+      "mean_s": 1.8347597877647748,
+      "p95_s": 4.486031556106051
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "researcher",
+      "frac": 0.9,
+      "cache": "global_freq",
+      "tok_per_s": 0.9098266984267099,
+      "mean_s": 1.0991104149056292,
+      "p95_s": 3.105131809725862
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "researcher",
+      "frac": 0.5,
+      "cache": "domain_freq",
+      "tok_per_s": 0.41869538152686636,
+      "mean_s": 2.388371221944881,
+      "p95_s": 4.399240129077578
+    },
+    {
+      "topology": "A_chain",
+      "profile": "intercontinental",
+      "frac": 1.0,
+      "tok_per_s": 1.3158485063481573,
+      "mean_s": 0.7599659042630036,
+      "p95_s": 1.1190994244506163
+    },
+    {
+      "topology": "B_star",
+      "profile": "intercontinental",
+      "frac": null,
+      "tok_per_s": 0.10565860432429283,
+      "mean_s": 9.464444532418282,
+      "p95_s": 11.643330276331522
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "intercontinental",
+      "frac": 0.25,
+      "cache": "global_freq",
+      "tok_per_s": 0.1113494818741414,
+      "mean_s": 8.980733301752608,
+      "p95_s": 11.803065007120129
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "intercontinental",
+      "frac": 0.5,
+      "cache": "global_freq",
+      "tok_per_s": 0.1627822752501731,
+      "mean_s": 6.143174976901771,
+      "p95_s": 10.50529222791076
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "intercontinental",
+      "frac": 0.75,
+      "cache": "global_freq",
+      "tok_per_s": 0.28204239298445477,
+      "mean_s": 3.5455662867500797,
+      "p95_s": 8.966370309351852
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "intercontinental",
+      "frac": 0.9,
+      "cache": "global_freq",
+      "tok_per_s": 0.4766445806930585,
+      "mean_s": 2.09799930704334,
+      "p95_s": 5.979648111011783
+    },
+    {
+      "topology": "C_hybrid",
+      "profile": "intercontinental",
+      "frac": 0.5,
+      "cache": "domain_freq",
+      "tok_per_s": 0.21631276113072972,
+      "mean_s": 4.622935765660376,
+      "p95_s": 8.758747196581744
+    }
+  ]
+}

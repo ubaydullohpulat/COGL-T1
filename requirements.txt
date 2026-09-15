@@ -1,0 +1,7 @@
+huggingface_hub==1.31.0
+mlx==0.32.2
+mlx-lm @ git+https://github.com/ml-explore/mlx-lm@872ae88d1fac77350db23c8c04fe8dd372a9e3e8
+mlx-metal==0.32.2
+numpy==2.4.6
+safetensors==0.8.0
+transformers==5.17.0

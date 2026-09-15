@@ -13,3 +13,5 @@ weights/
 data/raw/
 # large upstream index files (hash recorded in experiments/*/sources/SHA256SUMS; re-download by pinned revision)
 experiments/*/sources/*/model.safetensors.index.json
+# large routing traces (regenerate with experiments/S02-*/trace_ling.py)
+experiments/*/traces/*.npz

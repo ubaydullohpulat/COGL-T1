@@ -16,6 +16,7 @@ serve a ~2.8T-parameter MoE model, with each peer holding an expert slice?
 - Hardware: Apple M4 Max, 128 GB unified memory, **~300 GB free disk** — never plan to hold all of K3 (1.56 TB) or all proxies at once
 - Network: ~72 Mbps down / 30 Mbps up (measured 2026-09-15)
 - K3 can't be served locally. Testing strategy = proxy portfolio + layer-streamed real K3 (see `experiments/P00-proxy-selection/README.md`, D-005)
+- Python env: `.venv` (mlx + mlx-lm pinned, see `requirements.txt`); run model scripts with `../../.venv/bin/python` from the experiment folder
 - Any download > 1 GB: state name, source, size and disk impact, and get the researcher's OK first
 
 ---

@@ -7,10 +7,12 @@ the detailed method for each test; amendments live in `DECISIONS.md`.
 
 ## ▶ Current step
 
-**S01 — SwarmLab: few-peer swarm emulator on the Ling-3.0 family** · v0 ✅ done 2026-09-16 · v1 next (D-006)
-Folder: `experiments/S01-swarmlab-v0/` · Headline (simulated): 4-peer pipeline @137 ms ≈ 2.4 tok/s; naive expert-sharded star ≈ 0.12 tok/s
-Next action: **S01 v1**. Install MLX, get Ling-3.0-tiny (needs P-10 approval), measure real per-layer compute + routing traces, replay in SwarmLab, add hybrid topology + MTP speculative decoding.
-Paused: T0 step 1.2 (K3) and K3S spike (D-006).
+**S03 — Adaptive expert placement over home links** (proposed) · S01 v0 ✅ · S02 ✅ done 2026-09-16
+Where we are: routing structure is real (T1-lite PASS, D-008), but static hot-expert caches can't keep remote misses rare enough.
+4-peer pipeline ≈ 2.5 tok/s @137 ms; keep-90% hybrid ≈ 0.9 tok/s; expert-star ≈ 0.2 tok/s (S02 replay).
+Next action (pick with researcher): **(a)** expert paging (pull expert weights on a miss, LRU) and **(b)** per-session placement from prefill routing, both replayed on the existing traces, no new downloads.
+Then: granularity ladder (512-expert model) and a localhost multi-process validation of the emulator.
+Paused: T0 step 1.2 (K3), K3S (D-006).
 
 ---
 
@@ -43,7 +45,7 @@ Paused: T0 step 1.2 (K3) and K3S spike (D-006).
 ### Phase 1 — Routing structure on a proxy MoE (6–8 weeks)
 | ID | Test | Question | Kill gate | Status |
 |---|---|---|---|---|
-| T1 | Routing structure | Skewed usage? temporal locality? domain clustering? | near-uniform AND no autocorrelation → thesis dead | NOT STARTED |
+| T1 | Routing structure | Skewed usage? temporal locality? domain clustering? | near-uniform AND no autocorrelation → thesis dead | IN PROGRESS — T1-lite PASS on Ling-3.0-tiny (D-008) |
 | T2 | Next-layer predictability | Probe recall of layer L+1 experts from layer L state | recall ≈ chance | NOT STARTED |
 | T3 | Boundary precision | fp8 / int8 / int4 activations on the wire | — (sets bandwidth) | NOT STARTED |
 
@@ -92,7 +94,8 @@ Proxies per D-005: dev on Ling-3.0-tiny → primary Ling-3.0-flash, LatentMoE ch
 | L2 | Consumer RTT measurements, target geography | T4 input; needs calendar time | NOT STARTED |
 | L3 | K3 license + legal questions | Can change target model; legal advice before launch | IN PROGRESS — license read 2026-09-15 (no blocker for non-commercial); legal review still due before launch |
 | P0 | Proxy selection (how to test without serving K3) | Every Phase 1–3 result depends on it | DONE — recommendation 2026-09-15, awaiting P-8 |
-| S01 | SwarmLab emulator (few peers, home latency, Ling-3.0) | Concrete behaviour now; feeds T4/T5/T7/T9 | IN PROGRESS — v0 done 2026-09-16 |
+| S01 | SwarmLab emulator (few peers, home latency, Ling-3.0) | Concrete behaviour now; feeds T4/T5/T7/T9 | v0 DONE 2026-09-16; v1 replay in S02 |
+| S02 | Real routing + measured compute on Ling-3.0-tiny, replayed | T1-lite gate + hybrid topology | DONE — PASS (T1-lite), static hybrid insufficient |
 | K3S | K3 layer-streaming spike (load + run real K3 layers one shard at a time) | Only local source of real K3 routing/activations | PAUSED (D-006) |
 | L4 | Same-tokenizer draft model availability | Spec decoding (T7) depends on it | IN PROGRESS — same tokenizer: Kimi Linear 48B-A3B, Moonlight 16B-A3B (no 1–3B dense); chat-token ID alignment unchecked |
 

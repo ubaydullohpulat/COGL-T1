@@ -1,0 +1,131 @@
+{
+  "n_prompts": 24,
+  "decode_tokens": 6136,
+  "prefill_tokens": 965,
+  "n_moe_layers": 23,
+  "E": 128,
+  "k": 8,
+  "skew": {
+    "norm_entropy_mean": 0.9277867810928625,
+    "norm_entropy_min": 0.9105816850297189,
+    "gini_mean": 0.45778098494806135,
+    "top10pct_share_mean": 0.29013466498497825,
+    "top25pct_share_mean": 0.5685477013774729,
+    "uniform_top10pct_share": 0.1,
+    "uniform_top25pct_share": 0.25,
+    "per_layer_top25pct_share": [
+      0.472,
+      0.511,
+      0.514,
+      0.543,
+      0.556,
+      0.57,
+      0.528,
+      0.531,
+      0.552,
+      0.597,
+      0.583,
+      0.588,
+      0.586,
+      0.585,
+      0.59,
+      0.588,
+      0.599,
+      0.599,
+      0.616,
+      0.596,
+      0.607,
+      0.598,
+      0.567
+    ]
+  },
+  "per_sequence_top25pct_share_mean": 0.8004474256461108,
+  "temporal": {
+    "adjacent_overlap": 0.4382060716089522,
+    "random_baseline": 0.0625,
+    "reuse_within_1": 0.4382060716089522,
+    "reuse_within_4": 0.6496038934897631,
+    "reuse_within_16": 0.8618169756267698,
+    "random_reuse_within_1": 0.0625,
+    "random_reuse_within_4": 0.2275238037109375,
+    "random_reuse_within_16": 0.6439258695482072
+  },
+  "domain": {
+    "cosine_within_domain": 0.6979119622062044,
+    "cosine_across_domain": 0.38174176227027584
+  },
+  "hybrid_cache": {
+    "0.1": {
+      "random": {
+        "p_all_local": 0.0,
+        "mean_missed_experts": 7.17333139755727
+      },
+      "global_freq": {
+        "p_all_local": 0.00046065991701729774,
+        "mean_missed_experts": 5.696367360989364
+      },
+      "domain_freq": {
+        "p_all_local": 0.0023592270774894807,
+        "mean_missed_experts": 4.970669568504558
+      },
+      "oracle_self": {
+        "p_all_local": 0.02131294011512389,
+        "mean_missed_experts": 3.806761839279453
+      }
+    },
+    "0.25": {
+      "random": {
+        "p_all_local": 7.076539855072464e-06,
+        "mean_missed_experts": 5.972985879791959
+      },
+      "global_freq": {
+        "p_all_local": 0.046785744287634407,
+        "mean_missed_experts": 3.712835154058555
+      },
+      "domain_freq": {
+        "p_all_local": 0.10130203767823749,
+        "mean_missed_experts": 2.742339531469144
+      },
+      "oracle_self": {
+        "p_all_local": 0.28217405913978494,
+        "mean_missed_experts": 1.5964205948311125
+      }
+    },
+    "0.5": {
+      "random": {
+        "p_all_local": 0.0028598352033660595,
+        "mean_missed_experts": 4.005391181992169
+      },
+      "global_freq": {
+        "p_all_local": 0.33773699560250114,
+        "mean_missed_experts": 1.7521583446557971
+      },
+      "domain_freq": {
+        "p_all_local": 0.4932021845050257,
+        "mean_missed_experts": 0.9134180783222301
+      },
+      "oracle_self": {
+        "p_all_local": 0.8079575462394809,
+        "mean_missed_experts": 0.2607985715433614
+      }
+    },
+    "0.75": {
+      "random": {
+        "p_all_local": 0.09046899653751754,
+        "mean_missed_experts": 1.9947371088271388
+      },
+      "global_freq": {
+        "p_all_local": 0.6407156253652407,
+        "mean_missed_experts": 0.7238535548883824
+      },
+      "domain_freq": {
+        "p_all_local": 0.8231490511044881,
+        "mean_missed_experts": 0.22670973768408134
+      },
+      "oracle_self": {
+        "p_all_local": 0.9901268572492987,
+        "mean_missed_experts": 0.010786701218443199
+      }
+    }
+  }
+}

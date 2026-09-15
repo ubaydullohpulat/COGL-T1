@@ -1,0 +1,50 @@
+{
+  "model": "rapid-mlx/Ling-3.0-tiny-MLX-4bit@328a497 + fix_kv_b_proj.py",
+  "mlx": "0.32.2",
+  "python": "3.11.13",
+  "chip": "Apple M4 Max",
+  "prefill": {
+    "128": {
+      "seconds": 0.050944208982400596,
+      "tok_per_s": 2512.5525070812155
+    },
+    "512": {
+      "seconds": 0.13278591603739187,
+      "tok_per_s": 3855.8306127573296
+    },
+    "2048": {
+      "seconds": 0.4902353750076145,
+      "tok_per_s": 4177.5851038252595
+    },
+    "4096": {
+      "seconds": 1.018691375036724,
+      "tok_per_s": 4020.8448803763936
+    }
+  },
+  "decode_tok_per_s": 162.95958375577828,
+  "eval_overhead_s": 0.00011781201465055346,
+  "decode_components_median_s": {
+    "attention_kda": 0.00026404199888929725,
+    "attention_mla": 0.00029510451713576913,
+    "dense_mlp": 0.00017218748689629138,
+    "router": 0.0002152079832740128,
+    "routed_experts": 0.00020183296874165535,
+    "shared_expert": 0.0001414999715052545,
+    "head": 0.0004005004884675145
+  },
+  "decode_components_count_per_token": {
+    "attention_kda": 18,
+    "attention_mla": 6,
+    "dense_mlp": 1,
+    "router": 23,
+    "routed_experts": 23,
+    "shared_expert": 23,
+    "head": 1
+  },
+  "routed_experts_vs_k_s": {
+    "1": 0.00042443748679943383,
+    "2": 0.00029441650258377194,
+    "4": 0.00030127051286399364,
+    "8": 0.00031543750083073974
+  }
+}

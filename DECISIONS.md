@@ -5,6 +5,20 @@ Format: **D-NNN · date · title** — Context / Decision / Alternatives conside
 
 ---
 
+## D-008 · 2026-09-16 · Gate verdict T1-lite (proxy): PASS — routing has exploitable structure
+- **Numbers vs threshold:** kill = near-uniform usage AND ~zero temporal autocorrelation. Measured on Ling-3.0-tiny (6,136 decode tokens):
+  top-25% experts carry 56.9% of traffic (uniform 25%); adjacent-token overlap 43.8% (random 6.2%). Both conditions fail → PASS.
+- **Caveat:** preliminary; one small proxy, 24 prompts. Full T1 on Ling-3.0-flash / ladder still required.
+- **Paired risk surfaced (not a plan gate, but serious):** static hot-expert placement over home links loses 2.7× throughput even
+  when keeping 90% of experts local (S02 §4). Expert-level sharding needs per-session adaptive placement or expert paging to be viable.
+
+## D-007 · 2026-09-16 · Method: MLX environment and patched community weights
+- **Decision:** project `.venv` (Python 3.11) with mlx 0.32.2 + mlx-lm pinned to git `872ae88d` (PyPI release lacks Ling-3.0 support); `requirements.txt` records it.
+  Use `rapid-mlx/Ling-3.0-tiny-MLX-4bit@328a497` made loadable by `fix_kv_b_proj.py` (key renames + dequantized kv_b_proj), instead of a 16 GB download of the official bf16 weights.
+- **Risk:** community quant ≠ official weights. If a result hinges on exact quality, re-run on a self-converted official checkpoint.
+
+---
+
 ## D-006 · 2026-09-16 · Pivot: pause K3 work, focus on a few-peer swarm emulator with the Ling-3.0 family
 - **Context:** Researcher: stop focusing on K3 for now; simulate a few instances with home-internet latency for Ling-3.0-flash and see how it behaves.
 - **Decision:** T0 (K3 feasibility) and K3S (layer streaming) paused, not cancelled. New active track S01 SwarmLab:
@@ -68,7 +82,7 @@ Format: **D-NNN · date · title** — Context / Decision / Alternatives conside
 - ~~P-1~~ resolved by D-002 · ~~P-2~~ resolved by D-004 · ~~P-5~~ resolved by D-003
 - **P-3** (partly resolved by D-004) Any budget for rented GPUs / VPS later (Phase 3 WAN, Phase 4)?
 - **P-4** Target geography for RTT measurements (L2)
-- **P-10** Approve: create `.venv`, `pip install mlx mlx-lm` (Apple, PyPI), download `rapid-mlx/Ling-3.0-tiny-MLX-4bit` (4.5 GB) or convert `inclusionAI/Ling-3.0-tiny` (bf16 ~16 GB) ourselves?
+- ~~P-10~~ approved 2026-09-16 (D-007): create `.venv`, `pip install mlx mlx-lm` (Apple, PyPI), download `rapid-mlx/Ling-3.0-tiny-MLX-4bit` (4.5 GB) or convert `inclusionAI/Ling-3.0-tiny` (bf16 ~16 GB) ourselves?
 - **P-7** (paused by D-006) Approve the K3 layer-streaming spike (first 4 layers ≈ 53 GB download ≈ 1.6 h, ~30 GB peak disk)?
 - **P-8** Confirm D-005 proxy portfolio (esp. Ling-3.0-flash as primary despite needing our own MLX conversion)?
 - **P-9** Budget for K3 hosted API (T7 draft acceptance) — and does the API expose logprobs?
