@@ -11,3 +11,5 @@ weights/
 *.npz
 # raw traces live outside git until we decide on storage (see DECISIONS)
 data/raw/
+# large upstream index files (hash recorded in experiments/*/sources/SHA256SUMS; re-download by pinned revision)
+experiments/*/sources/*/model.safetensors.index.json

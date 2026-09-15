@@ -1,6 +1,6 @@
 # T0 — Napkin feasibility
 
-**Phase:** 0 · **Status:** IN PROGRESS (defined 2026-09-15) · **Budget:** ~1 week, arithmetic only
+**Phase:** 0 · **Status:** IN PROGRESS — 1.1 done 2026-09-15, next 1.2 · **Budget:** ~1 week, arithmetic only
 
 ## Question
 Is the target physically possible? What is the *best-case* decode tok/s for a ~2.8T MoE served
@@ -11,7 +11,7 @@ by expert-sharded peers, at 50 / 150 / 300 ms network latency?
 - Optimistic case < **0.1 tok/s** → stop, or redefine as batch-only
 - In between → **GRAY**: record it, and decide whether spec decoding (T7) is a hard requirement from day one
 
-Proposed amendment (pending P-1): evaluate the gate per topology, with and without speculative decoding.
+Amendment adopted (D-002): evaluate the gate per topology, with and without speculative decoding.
 
 ## What this cannot tell us
 Anything about real-world behaviour. This is a lower bound on badness, not a prediction.
@@ -21,10 +21,11 @@ Anything about real-world behaviour. This is a lower bound on badness, not a pre
 ## Sub-steps
 
 ### 1.1 Pin the target  *(~half day)*
-- [ ] Exact model name, org, release, weights revision/hash → `sources.md`
-- [ ] Tech report (URL, version) and `config.json` @ revision saved locally
-- [ ] License text: read, quote the clauses on non-commercial use / revenue thresholds / redistribution (L3)
-- [ ] Is there a small same-tokenizer model in the family? (L4 — needed for spec decoding)
+- [x] Exact model name, org, release, weights revision/hash → `sources.md` (K3 @ f831ab6, proxy Kimi Linear @ e1df551)
+- [~] Tech report: primary PDF not yet located; README architecture table + `config.json` @ revision saved locally
+- [x] License text read, clauses summarised in `sources.md` (L3)
+- [x] Same-tokenizer family models exist: Kimi Linear 48B-A3B, Moonlight 16B-A3B (L4) — none are 1–3B dense
+- [x] (added) Proxy model pinned + proxy-fidelity table vs K3 → `sources.md`
 
 ### 1.2 Extract architecture  *(~1 day)* → `arch.md`
 Every value `CITED` with file + field / report section:
@@ -34,6 +35,9 @@ Every value `CITED` with file + field / report section:
 - [ ] expert FFN intermediate dim; activation type (gated → 3 matrices)
 - [ ] attention type(s) and layer mix (e.g. linear/KDA vs full attention ratio), attention params per layer, KV/state size
 - [ ] native precision / quantization format (MXFP4 details: block size, scale format)
+- [ ] Size of the non-routed part (attention + shared experts + dense + embeddings, unquantized) — can any consumer device host it?
+- [ ] AttnRes boundary state: confirm snapshot count per layer (expected up to 8 + current stream)
+- [ ] Optional: read exact tensor shapes from safetensors headers via HTTP range requests (no weight download)
 - [ ] **Sanity check:** recompute total and active params from dims → must match reported within ~2%
 
 ### 1.3 Define the latency model  *(~half day)* → `model.md`
@@ -60,7 +64,7 @@ A single small arithmetic script (not a system) so sweeps are reproducible:
 - [ ] What T0 implies for later tests (e.g. "spec decoding is mandatory", "star beats chain by X")
 
 ## Files (to be created)
-- `sources.md` — exact provenance of every input
+- `sources.md` — exact provenance of every input ✅
 - `arch.md` — sourced architecture table
 - `model.md` — latency model definitions and assumptions
 - `calc.py` — arithmetic

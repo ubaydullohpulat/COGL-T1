@@ -7,9 +7,11 @@ the detailed method for each test; amendments live in `DECISIONS.md`.
 
 ## ▶ Current step
 
-**Step 1 — Test 0: Napkin feasibility** (Phase 0) · `IN PROGRESS` (defined 2026-09-15, not yet executed)
+**Step 1 — Test 0: Napkin feasibility** (Phase 0) · `IN PROGRESS` — 1.1 ✅ done 2026-09-15
 Folder: `experiments/T00-feasibility/` · Target: ~1 week
-Next action: **1.1 — pin the exact target model (K3), revision, tech report, config.json, license.**
+Target: **Kimi K3** @ `f831ab6` · Proxy for all on-Mac experiments: **Kimi Linear 48B-A3B** @ `e1df551` (D-004)
+Next action: **1.2 — extract the architecture table for K3 and Kimi Linear, with the parameter-count sanity check.**
+Heads-up: K3 has 93 layers → naive one-round-trip-per-layer decode is ~0.07 tok/s at 150 ms (below the kill line). Topology choice in 1.3 is decisive.
 
 ---
 
@@ -46,7 +48,7 @@ Next action: **1.1 — pin the exact target model (K3), revision, tech report, c
 | T2 | Next-layer predictability | Probe recall of layer L+1 experts from layer L state | recall ≈ chance | NOT STARTED |
 | T3 | Boundary precision | fp8 / int8 / int4 activations on the wire | — (sets bandwidth) | NOT STARTED |
 
-Prerequisite: choose proxy model + hardware (open question, see DECISIONS backlog).
+Proxy + hardware chosen (D-004): Kimi Linear 48B-A3B on M4 Max 128 GB; peers simulated as logical partitions of one loaded model. Open: which precision for traces (P-6).
 
 ### Phase 2 — Simulator (6–8 weeks)
 | ID | Test | Question | Kill gate | Status |
@@ -89,8 +91,8 @@ Prerequisite: choose proxy model + hardware (open question, see DECISIONS backlo
 |---|---|---|---|
 | L1 | Prior-art sweep (`references/reading-list.md`) | T1/T2/T5 may be partly answered; protects novelty claim | NOT STARTED |
 | L2 | Consumer RTT measurements, target geography | T4 input; needs calendar time | NOT STARTED |
-| L3 | K3 license + legal questions | Can change target model; legal advice before launch | NOT STARTED |
-| L4 | Same-tokenizer draft model availability | Spec decoding (T7) depends on it | NOT STARTED |
+| L3 | K3 license + legal questions | Can change target model; legal advice before launch | IN PROGRESS — license read 2026-09-15 (no blocker for non-commercial); legal review still due before launch |
+| L4 | Same-tokenizer draft model availability | Spec decoding (T7) depends on it | IN PROGRESS — same tokenizer: Kimi Linear 48B-A3B, Moonlight 16B-A3B (no 1–3B dense); chat-token ID alignment unchecked |
 
 ---
 

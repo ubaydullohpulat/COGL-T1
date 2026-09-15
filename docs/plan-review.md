@@ -4,6 +4,11 @@ Review of `docs/plan/swarm-moe-research-plan.v1.md`. The plan is strong: kill ga
 and early, unknowns are listed honestly, and the simulator-validation gate (Test 9) is the right
 backbone. Issues below are proposed amendments; accepted ones get logged in `DECISIONS.md`.
 
+> **Update 2026-09-15 (session 2):** all amendments adopted (D-002). K3 config pinned: **93 layers (92 MoE)**, not ~60.
+> The §A1 rough table below used an assumed 60 layers; with 92 MoE layers it becomes ~0.22 / 0.07 / 0.04 tok/s
+> at 50 / 150 / 300 ms (`COMPUTED`, same zero-compute, one-round-trip-per-layer assumptions). That's below the 0.1
+> kill line at 150 ms for this naive topology. Formal numbers come in T0 step 1.4. See `experiments/T00-feasibility/sources.md`.
+
 ## A. Issues that affect Step 1 (Test 0) directly
 
 ### A1. The Test 0 kill line is likely to land in the gray zone — define it precisely first
