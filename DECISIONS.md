@@ -5,6 +5,17 @@ Format: **D-NNN · date · title** — Context / Decision / Alternatives conside
 
 ---
 
+## D-006 · 2026-09-16 · Pivot: pause K3 work, focus on a few-peer swarm emulator with the Ling-3.0 family
+- **Context:** Researcher: stop focusing on K3 for now; simulate a few instances with home-internet latency for Ling-3.0-flash and see how it behaves.
+- **Decision:** T0 (K3 feasibility) and K3S (layer streaming) paused, not cancelled. New active track S01 SwarmLab:
+  v0 = numpy Monte Carlo emulator with Ling-3.0-flash architecture, assumed compute, synthetic routing (done);
+  v1 = real compute + routing traces from Ling-3.0-tiny (MLX) replayed in the emulator; then hybrid topology, MTP speculative decoding, and a localhost multi-process validation.
+- **Why emulate before running real processes:** several peer processes on one M4 Max would compete for the same GPU and distort timings.
+  Measure compute once, then add network time virtually. Keep a real multi-process run only as a validation gate.
+- **Consequences:** ROADMAP current step moves to S01 v1. Needs approval for installing mlx / mlx-lm and downloading Ling-3.0-tiny (P-10).
+
+---
+
 ## D-005 · 2026-09-15 · Testing strategy: proxy portfolio + layer-streamed real K3 (supersedes D-004's single-proxy choice)
 - **Context:** Researcher: K3 can't be run here; find the best-suited stand-in, prove the concept, then validate on K3. Disk ~300 GB.
 - **Decision (recommended, awaiting confirmation):** no single proxy matches K3, so each test uses the model that matches the property it depends on:
@@ -57,7 +68,8 @@ Format: **D-NNN · date · title** — Context / Decision / Alternatives conside
 - ~~P-1~~ resolved by D-002 · ~~P-2~~ resolved by D-004 · ~~P-5~~ resolved by D-003
 - **P-3** (partly resolved by D-004) Any budget for rented GPUs / VPS later (Phase 3 WAN, Phase 4)?
 - **P-4** Target geography for RTT measurements (L2)
-- **P-7** Approve the K3 layer-streaming spike (first 4 layers ≈ 53 GB download ≈ 1.6 h, ~30 GB peak disk)?
+- **P-10** Approve: create `.venv`, `pip install mlx mlx-lm` (Apple, PyPI), download `rapid-mlx/Ling-3.0-tiny-MLX-4bit` (4.5 GB) or convert `inclusionAI/Ling-3.0-tiny` (bf16 ~16 GB) ourselves?
+- **P-7** (paused by D-006) Approve the K3 layer-streaming spike (first 4 layers ≈ 53 GB download ≈ 1.6 h, ~30 GB peak disk)?
 - **P-8** Confirm D-005 proxy portfolio (esp. Ling-3.0-flash as primary despite needing our own MLX conversion)?
 - **P-9** Budget for K3 hosted API (T7 draft acceptance) — and does the API expose logprobs?
 - **P-6** Trace precision for Phase 1 on the Mac: MLX 8-bit (52 GB, lots of headroom) for bulk traces + bf16 (98 GB, tight) spot-check that quantization doesn't flip top-k routing? Or bf16 only?

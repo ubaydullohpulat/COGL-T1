@@ -10,7 +10,7 @@ serve a ~2.8T-parameter MoE model, with each peer holding an expert slice?
 - Decision log: `DECISIONS.md`
 - Lab notebook (one file per day): `notebook/YYYY/YYYY-MM-DD.md`, index in `notebook/INDEX.md`
 - Experiments: `experiments/TNN-short-name/` (README = question, method, kill criterion, results)
-- Remote: `git@github.com:ubaydullohpulat/COGL-T1.git` (branch `main`); commit at the end of each session, push when the researcher asks
+- Remote: `git@github.com:ubaydullohpulat/COGL-T1.git` (branch `main`); commit and push at the end of each session (researcher asked for all code to live there)
 
 ## Standing constraints (update in DECISIONS if they change)
 - Hardware: Apple M4 Max, 128 GB unified memory, **~300 GB free disk** — never plan to hold all of K3 (1.56 TB) or all proxies at once
