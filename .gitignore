@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+# model weights and large artifacts never go in git
+models/
+weights/
+*.safetensors
+*.gguf
+*.bin
+*.npz
+# raw traces live outside git until we decide on storage (see DECISIONS)
+data/raw/
